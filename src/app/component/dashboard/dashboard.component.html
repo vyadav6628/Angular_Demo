@@ -1,0 +1,91 @@
+<div class="container-fluid">
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Student Details</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <button  type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Student</button>
+        </div>
+      </nav>
+     
+  <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add Student</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- <form action="" [formGroup]="student_Details">
+                    <label for="recipient-name" class="col-form-label">Name:</label>
+                    <input type="text" formControlName="name" class="form-control" id="txtname" placeholder="Name">
+                    <label for="recipient-email" class="col-form-label">Email:</label>
+                    <input type="text" formControlName="email" class="form-control" id="txtname" placeholder="Email">
+                    <label for="recipient-mobile" class="col-form-label">Mobile:</label>
+                    <input type="text" formControlName="mobile" class="form-control" id="txtname" placeholder="Mobile">
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" (click)="addstudentdetails()">Save</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    
+                    </div>
+                </form>
+                 -->
+            </div>
+           
+        </div>
+        </div>
+    </div>
+    <table class="table table-responsive" id="StudetTable" border="1">
+        <thead>
+            <tr>
+                <th>Sr.No</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile No</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+         
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of stdList">
+                <td>{{student.id}}</td>
+                <td>{{student.name}}</td>
+                <td>{{student.email}}</td>
+                <td>{{student.mobile}}</td>
+                <td> <button  type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">Edit</button></td>
+                <td><button type="button" class="btn btn-danger">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Update Student</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="" [formGroup]="student_Details">
+                    <label for="recipient-name" class="col-form-label">Name:</label>
+                    <input type="text" formControlName="name" class="form-control" id="txtname" placeholder="Name">
+                    <label for="recipient-email" class="col-form-label">Email:</label>
+                    <input type="text" formControlName="email" class="form-control" id="txtemail" placeholder="Email">
+                    <label for="recipient-mobile" class="col-form-label">Mobile:</label>
+                    <input type="text" formControlName="mobile" class="form-control" id="txtmobile" placeholder="Mobile">
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" (click)="addstudentdetails()">Edit</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    
+                    </div>
+                </form>
+                
+            </div>
+           
+        </div>
+        </div>
+    </div>
+</div>
